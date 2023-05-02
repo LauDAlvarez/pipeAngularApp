@@ -1,0 +1,86 @@
+
+<p-panel header="Pipes no tan comunes" class="p-2">
+    <p> Pipes incluidos en angular - Usualmente en el Commun Module</p>
+</p-panel>
+<div class="grid ">
+    <div class="col-12 md:col-6">
+        <p-fieldset legend="I18nSelected pipe" [toggleable]="true">
+            
+            <p>
+                Saludos {{name}}, un placer {{ gender | i18nSelect:changeState }}
+            </p>
+
+            <p-button
+                (click)="changeText()"
+                label="Cambiar Nombre"
+            >
+            </p-button>
+
+        </p-fieldset>
+    </div>
+    <div class="col-12 md:col-6">
+        <p-fieldset legend="I18nPlural pipe" [toggleable]="true">
+            
+            <p>
+                Actualmente {{cantGente.length | i18nPlural:genteMap}} en el Quincho!
+            </p>
+
+            <p-button
+                (click)="borrarGente()"
+                label="Quitar gente"
+            >
+            </p-button>
+
+        </p-fieldset>
+    </div>
+    <div class="col-12 md:col-6">
+        <p-fieldset legend="Slice pipe" [toggleable]="true">
+
+            <b>Original</b>
+            <pre> {{ cantGente }} </pre>
+            
+            <b>Slice:0:1</b>
+            <pre> {{ cantGente | slice:0:1 }} </pre>
+            
+            <b>Slice:1:2</b>
+            <pre> {{ cantGente | slice:1:2 }} </pre>
+            
+            <b>Slice:0:3</b>
+            <pre> {{ cantGente | slice:0:3 }} </pre>
+            
+            <b>Slice:1:1</b>
+            <pre> {{ cantGente | slice:1:1 }} </pre>
+            
+            <b>Slice:0:-1</b>
+            <pre> {{ cantGente | slice:0:-1 }} </pre>
+            
+            <b>Slice:0:-1</b>
+            <pre> {{ cantGente | slice:0:-1 }} </pre>
+            
+        </p-fieldset>
+    </div>
+    <div class="col-12 md:col-6">
+        <p-fieldset legend="Json pipe" [toggleable]="true">
+            <pre> {{person | json }}</pre>
+        </p-fieldset>
+    </div>
+    <div class="col-12 md:col-6">
+        <p-fieldset legend="KeyValue pipe" [toggleable]="true">
+            <ul>
+                <li *ngFor="let item of person | keyvalue">
+                    <b>{{item.key | titlecase}}:</b> {{item.value}}
+                </li>
+            </ul>
+        </p-fieldset>
+    </div>
+
+    <div class="col-12 md:col-6">
+        <p-fieldset legend="Async pipe" [toggleable]="true">
+            
+            <pre> {{ myObservableTimer | async }} </pre>
+            <pre> {{ miPromiseValue | async }} </pre>
+
+        </p-fieldset>
+    </div>    
+
+</div>  
