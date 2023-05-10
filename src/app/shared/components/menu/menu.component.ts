@@ -36,8 +36,9 @@ export class MenuComponent {
           icon: 'pi pi-cog',
           items:[
             {
-              label: 'Otro elemento',
-              icon: 'pi pi-pencil'
+              label: 'Custom pipes',
+              icon: 'pi pi-pencil',
+              routerLink: 'custom'
             }
           ]
         }
